@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+body {
+  /* background-color: #1E252B; */
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(to bottom right, #39393a, #1e252b);
+}
+
+.custom-card {
+  background-color: #313c46;
+  color: white;
+  width: 300px;
+  height: 700px;
+  border-radius: 3px;
+  padding: 2%;
+  margin: 3%;
+}
+
+input {
+  height: 45px;
+  width: 250px;
+}
+
+.font-awesome {
+  font-size: 2em;
+}
+
+.custom-width {
+  padding: 1%;
+  margin: 2%;
+}
+
+.custom-button {
+  background-image: linear-gradient(to bottom right, #ff8b5a, #ff6e30);
+  color: white;
+  margin: 3%;
+  height: 50px;
+}
+
+.custom-button:hover {
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-item {
+  padding-left: 50px;
+}
+.nav-item:hover {
+  color: #ff6e30;
+}
+
+/* brand name */
+.brand-name:hover {
+  cursor: pointer;
+}
+
+/* buttons */
+
+#sign-up-button {
+  border-radius: 5%;
+  height: 45px;
+  width: 90px;
+  color: white;
+  background-color: #ff6e30;
+  border: none;
+}
+
+.main-image {
+  left: 0;
+  bottom: 0;
+  position: relative;
+}

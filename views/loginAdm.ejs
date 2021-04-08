@@ -1,0 +1,45 @@
+<%- include('partials/header'); -%>
+
+<section class="user-input">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 custom-card text-center">
+      <form action="/loginAdm" method="POST">
+        <br />
+
+        <br />
+        <h1 style="cursor: pointer">
+          Events<span style="color: #ff6e30; font-weight: 900">.</span>io
+        </h1>
+        <br />
+        <h5 style="opacity: 90%">LOGIN CLUB</h5>
+        <hr style="color: rgba(0, 0, 0, 0.589); opacity: 75%; width: 70%" />
+
+        <div class="input-group input-group-sm mb-3">
+          <div
+            class="input-group input-group-lg custom-width justify-content-center"
+          >
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                ><i class="fas fa-user"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              placeholder="club name"
+              name="clbName"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+            />
+            <div class="password error"></div>
+          </div>
+          <button class="btn btn-lg btn-block custom-button" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer'); -%>
