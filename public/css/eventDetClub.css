@@ -1,7 +1,10 @@
 /* font-section */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
-
+* {
+  margin: 0;
+}
 body {
+  color: white;
   font-family: "Poppins", sans-serif;
 }
 
@@ -42,22 +45,13 @@ body {
   text-align: center;
   margin: 5%;
   padding: 5%;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.394);
-  border-radius: 1%;
-}
-.custom-card:hover {
-  width: 1000px;
-  justify-content: center;
-  text-align: center;
-  margin: 5%;
-  padding: 5%;
-  box-shadow: 0 7px 35px rgba(0, 0, 0, 0.394);
+  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.394); */
   border-radius: 1%;
 }
 
 .fileupload {
-  background-color: rgba(0, 0, 0, 0.122);
-  color: black;
+  background-color: #ff6e30;
+  color: white;
   font-family: "Poppins", sans-serif;
 }
 

@@ -70,34 +70,44 @@
       style="margin-top: 10px; margin-bottom: 10px; text-align: center"
     >
       Create your new event
+
       <button
-        class="custom-button"
-        style="margin-left: 9px; border-radius: 70px"
-       
-        >
-        <a href="/eventDetailsClub/<%=clbname%>">
-        +
-        </a>
-      </button>
+      type="button"
+      style="background-color: #ff6e30;border-radius: 50%;"
+      class="btn btn-lg"
+    >
+      <a style="text-decoration: none; color: white" href="/eventDetailsClub/<%=clbname%>"
+        >+</a
+      >
+    </button>
     </div>
     <!--section for intro text-->
     <section id="top-text">
       <!--section for cards-->
-      <div class="container" style="padding-top: 50px">
+      <div style="padding-top: 50px;display:flex;flex-wrap: wrap;">
         <% if(array.length !== 0){ %>
             <% for(var i=0; i<array.length; i++) { %>
-            <div class="row card-deck justify-content-center">
+            <div class="row card-deck justify-content-center" style="margin: 0;padding: 0;">
           <div
             class="card col-lg-3 col-md-6 col-12 card-scale"
-            style="width: 18rem"
+            style="width: 20%;height:auto;margin: 10px 0;border-bottom: 5px solid #ff6e30;"
           >
             <img src="/uploads/<%=array[i].imageName%>" class="card-img-top" alt="..." />
-            <div class="card-body">
+            <div class="card-body" style="color: black;">
               <h5 class="card-title"><%=array[i].title%></h5>
               <p class="card-text">
                 <%=array[i].details%>
               </p>
-              <button class="custom-button"><a  href="/eventDetailsClubF/<%=array[i].title%>">Check your event</a></button>
+              <!-- <button class="custom-button"><a  href="/eventDetailsClubF/<%=array[i].title%>">Check your event</a></button> -->
+              <button
+              type="button"
+              style="margin-top: 50px; background-color: #ff6e30"
+              class="btn btn-lg"
+            >
+              <a style="text-decoration: none; color: white" href="/eventDetailsClubF/<%=array[i].title%>"
+                ><%=array[i].title%></a
+              >
+            </button>
             </div>
           </div>
         </div>
