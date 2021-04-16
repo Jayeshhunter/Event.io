@@ -6,7 +6,8 @@ module.exports.eventDetailsClub_get = (req, res) => {
 };
 
 module.exports.eventDetailsClub_post = (req, res) => {
-  console.log(req.body.details);
+  // console.log(req.body.details);
+  console.log(req.file);
   const arObj = {
     image: req.file.path,
     imageName: req.file.filename,

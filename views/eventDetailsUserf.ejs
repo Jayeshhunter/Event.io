@@ -56,7 +56,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <a href="/getin" style="color: white; position: relative; right: 10%"
-            >Sign In</a
+            >Log out</a
           >
           <!-- <button id="sign-up-button">Sign Up</button> -->
           &nbsp; &nbsp;
@@ -82,45 +82,14 @@
         <mark>Location: <%=location%></mark>
       </p>
       <br />
-      <button class="btn btn-lg custom-btn">
-        <a href="https://<%=gmeet%>" target="_blank"> Link To Join </a>
+      <button
+        onclick="window.location.href='https://<%=gmeet%>'"
+        class="btn btn-lg custom-btn"
+      >
+        <!-- <a href="https://<%=gmeet%>" target="_blank"> Link To Join </a> -->
+        Join the Meet
       </button>
     </div>
-
-    <!-- table-section -->
-
-    <!-- <div class="container custom-table justify-content-center">
-        <h2>Condensed Table</h2>
-        <p>The .table-condensed class makes a table more compact by cutting cell padding in half:</p>            
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th>Firstname</th>
-              <th>Lastname</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>Dooley</td>
-              <td>july@example.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
-
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script

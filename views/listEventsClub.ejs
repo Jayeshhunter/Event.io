@@ -23,7 +23,7 @@
   <body>
     <section id="custom-navbar">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" style="margin-left: 1%; margin-top: 0.5%" href="#"
+        <a class="navbar-brand" style="margin-left: 1%; margin-top: 0.5%" href="/"
           ><h2>
             EVENTS<span style="color: #ff6e30; font-weight: 1000">.</span>IO
           </h2></a
@@ -57,7 +57,7 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <a href="/getin" style="color: white; position: relative; right: 10%"
-              >Sign In</a
+              >Logout</a
             >
             <!-- <button id="sign-up-button">Sign Up</button> -->
             &nbsp; &nbsp;
@@ -84,10 +84,10 @@
     <!--section for intro text-->
     <section id="top-text">
       <!--section for cards-->
-      <div style="padding-top: 50px;display:flex;flex-wrap: wrap;">
+      <div style="padding-top: 50px;display:flex;flex-wrap: wrap;gap: 10px;">
         <% if(array.length !== 0){ %>
             <% for(var i=0; i<array.length; i++) { %>
-            <div class="row card-deck justify-content-center" style="margin: 0;padding: 0;">
+            <div class="row card-deck justify-content-center" style="justify-content: center;padding: 0;">
           <div
             class="card col-lg-3 col-md-6 col-12 card-scale"
             style="width: 20%;height:auto;margin: 10px 0;border-bottom: 5px solid #ff6e30;"
@@ -100,13 +100,14 @@
               </p>
               <!-- <button class="custom-button"><a  href="/eventDetailsClubF/<%=array[i].title%>">Check your event</a></button> -->
               <button
+              onclick="window.location.href='/eventDetailsClubF/<%=array[i].title%>'"
               type="button"
               style="margin-top: 50px; background-color: #ff6e30"
               class="btn btn-lg"
             >
-              <a style="text-decoration: none; color: white" href="/eventDetailsClubF/<%=array[i].title%>"
-                ><%=array[i].title%></a
-              >
+              <!-- <a style="text-decoration: none; color: white" href="/eventDetailsClubF/<%=array[i].title%>" -->
+                <%=array[i].title%>
+              
             </button>
             </div>
           </div>

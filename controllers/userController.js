@@ -1,15 +1,18 @@
 const Club = require("../models/club");
 const User = require("../models/user");
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
 
 module.exports.eventDetailsUser_get = (req, res) => {
+  console.log(req.params.id);
   Club.find({ "events._id": req.params.id }, (err, result) => {
     var allInterns = result[0].events.find((x) => x.title === req.params.title);
-
+    console.log(allInterns, result[0].clbName);
     res.render("eventDetailsUser", {
       image: allInterns.imageName,
       details: allInterns.details,
       title: allInterns.title,
-      club: result.clbName,
+      club: result[0].clbName,
       user: req.params.user,
       eventId: req.params.id,
       location: allInterns.location,
@@ -21,13 +24,32 @@ module.exports.eventDetailsUserF_get = (req, res) => {
   const under = {
     participate: req.params.eventId,
   };
+  const token = req.cookies.jwt;
+  let decoded = 0;
+  if (token) {
+    jwt.verify(token, "secretkey", (err, decodedToken) => {
+      if (err) {
+        console.log(err.message);
+        res.redirect("/login");
+      } else {
+        decoded = decodedToken.id;
+      }
+    });
+  }
+  console.log(decoded);
   let flag = 0;
-  User.find({ username: req.params.username }, (err, result) => {
+  User.find({ _id: decoded }, (err, result) => {
     if (result) {
-      let wal = result.events.find((x) => x.participate === req.params.eventId);
+      console.log(result);
+
+      let wal = result[0].events.find(
+        (x) => x.participate === req.params.eventId
+      );
       if (wal) {
         flag = 1;
       }
+    } else {
+      console.log(err);
     }
   });
   if (flag === 0) {
@@ -35,7 +57,7 @@ module.exports.eventDetailsUserF_get = (req, res) => {
       { username: req.params.username },
       { $push: { "$.events": under } },
       (err, result) => {
-        console.log(result);
+        console.log("events", result);
       }
     );
 

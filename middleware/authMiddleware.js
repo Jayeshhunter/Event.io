@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const Admin = require("../models/club");
 const requireAuth = (req, res, next) => {
-  const token = req.cookie.jwt;
+  const token = req.cookies.jwt;
   if (token) {
     jwt.verify(token, "secretkey", (err, decodedToken) => {
       if (err) {

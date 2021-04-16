@@ -1,11 +1,13 @@
-    <%- include('partials/header'); -%>
+    <%- include('partials/inside'); -%>
     <!--section for intro text-->
     <section id="top-text">
       <!--section for cards-->
-      <div style="display: flex;justify-content: space-evenly;padding: 50px;">
+      <div style="display: flex;flex-wrap: wrap;gap: 10px;padding: 50px;">
         <% if(array.length !== 0){ %>
             <% array.forEach((ele) => { %>
+              
                 <% if(ele.events.length !== 0){ %>
+                  <% ele.events.reverse(); %>
             <% for(var i=0; i<ele.events.length; i++) { %>
         <div class="card" style="width: 18rem;margin-right: 10px;">
           <img src="/uploads/<%=ele.events[i].imageName%>" style="width: 100%;" class="card-img-top" src="..." alt="Card image cap">
@@ -21,7 +23,7 @@
         <% }); %>
         
         <% }else{ %>
-            <h1 class="text-center">No events yet organized by you</h1>
+            <h1 class="text-center">No events </h1>
             <% } %>
       </div>
     </section>
