@@ -61,7 +61,3 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/", router);
-
-app.listen(9000, () => {
-  console.log("Server Running, HOST:9000");
-});
