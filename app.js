@@ -62,6 +62,10 @@ app.use(bodyParser.json());
 
 app.use("/", router);
 
+app.get("/contact",(req,res)=>{
+  res.render("contact")
+})
+
 app.listen(9000, () => {
   console.log("Server Running, HOST:9000");
 });
