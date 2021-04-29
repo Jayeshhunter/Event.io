@@ -9,15 +9,33 @@
                 <% if(ele.events.length !== 0){ %>
                   <% ele.events.reverse(); %>
             <% for(var i=0; i<ele.events.length; i++) { %>
-        <div class="card" style="width: 18rem;margin-right: 10px;">
-          <img src="/uploads/<%=ele.events[i].imageName%>" style="width: 100%;" class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%=ele.events[i].title%></h5>
-            <p class="card-text"><%=ele.events[i].details%></p>
-            <a href="/eventDetailsUser/<%=ele.events[i]._id%>/<%=ele.events[i].title%>/<%=user%>" class="btn btn-primary">Join</a>
-          </div>
-        </div>
-        <br>
+              <div class="cards">
+
+                <div class="card">
+                  <div class="card__image-holder">
+                    <img class="card__image" style="width: 300px;height:225px;"  src="/uploads/<%=ele.events[i].imageName%>" alt="wave" />
+                  </div>
+                  <div class="card-title">
+                    <a href="#" class="toggle-info btn">
+                      <span class="left"></span>
+                      <span class="right"></span>
+                    </a>
+                    <h2 style="color: black;font-size: 20px;">
+                      <%=ele.events[i].title%>
+                    </h2>
+                  </div>
+                  <div class="card-flap flap1">
+                    <div class="card-description" style="color: black;">
+                      <%=ele.events[i].details%>
+                    </div>
+                    <div class="card-flap flap2">
+                      <div class="card-actions">
+                        <a   onclick="window.location.href='/eventDetailsUser/<%=ele.events[i]._id%>/<%=ele.events[i].title%>/<%=user%>'" class="btn ">Join</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
         <% } %>
         <% } %>
         <% }); %>
@@ -48,5 +66,52 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+  var zindex = 10;
+  
+  $("div.card").click(function(e){
+    e.preventDefault();
+
+    var isShowing = false;
+
+    if ($(this).hasClass("show")) {
+      isShowing = true
+    }
+
+    if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+        .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+          .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+          .css({zIndex: zindex})
+          .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+        .addClass("showing");
+      $(this)
+        .css({zIndex:zindex})
+        .addClass("show");
+
+      zindex++;
+    }
+    
+  });
+});
+    </script>
   </body>
 </html>

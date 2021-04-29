@@ -36,3 +36,8 @@ body {
   margin-top: 5%;
   text-align: center;
 }
+.table {
+  background-color: #1e252b;
+  border-radius: 10px;
+  color: white;
+}

@@ -20,7 +20,7 @@
     <title>Events Details</title>
   </head>
   <body>
-    <div
+    <!-- <div
       id="main-text"
       style="
         height: 100vh;
@@ -29,15 +29,39 @@
         background-size: cover;
         position: relative;
       "
-    >
-      <img
+    > -->
+      <!-- <img
         src="/uploads/<%=image%>"
         style="width: 400px; margin-bottom: 40px"
         alt="IMAGE"
         srcset=""
-      />
+      /> -->
 
-      <h3><%=title%></h3>
+      
+      <div id="main-text" style="background-repeat: no-repeat;background-size: cover; background-image: linear-gradient(rgba(0, 0, 0, 0.843), rgba(0, 0, 0, 0.741)), url('/uploads/<%=image%>');">
+        <br>
+        <br>
+         <h1><%=title%></h1>
+   <br>
+         <p class="opacity">
+           <%=details%>
+         </p>
+         <br />
+         <p class="text-center text-warning text-uppercase">
+          Club Name:<mark><%=club%></mark>
+        </p>
+         <br />
+ 
+         <!-- <button class="btn btn-lg custom-btn">Know More</button> -->
+       </div>
+       <div id="main-text">
+        <button class="btn custom-button btn-warning">
+          <a style="text-decoration: none;color: white;" href="/eventDetailsUserF/<%=user%>/<%=eventId%>/<%=title%>">Click to confirm your participation</a></button>
+      </button>
+       </div>
+
+
+      <!-- <h3><%=title%></h3>
       <br />
       <br />
       <hr style="border-color: white; opacity: 60%; width: 80%" />
@@ -49,12 +73,10 @@
       <p class="text-center text-warning text-uppercase">
         Club Name:<mark><%=club%></mark>
       </p>
-      <br />
+      <br /> -->
 
-      <button class="btn custom-button btn-warning">
-        <a style="text-decoration: none;color: white;" href="/eventDetailsUserF/<%=user%>/<%=eventId%>/<%=title%>">Click to confirm your participation</a></button>
-    </button>
-    </div>
+ 
+    <!-- </div> -->
 
     <!-- table-section -->
 
