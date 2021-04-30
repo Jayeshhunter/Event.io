@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const multer = require("multer");
 const authRoutes = require("./routes/authRoutes");
+// const reload = require("reload");
+
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(
