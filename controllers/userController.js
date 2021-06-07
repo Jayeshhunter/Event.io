@@ -52,7 +52,7 @@ module.exports.eventDetailsUserF_get = (req, res) => {
         flag = 1;
       }
     } else {
-      console.log(err);
+      res.render("error");
     }
   });
   if (flag === 0) {
@@ -61,12 +61,15 @@ module.exports.eventDetailsUserF_get = (req, res) => {
       { $push: { "$.events": under } },
       (err, result) => {
         console.log("events", result);
+        if (err) {
+          res.render("error");
+        }
       }
     );
 
     User.find({ username: req.params.username }, (err, result) => {
       if (err) {
-        console.log(err);
+        res.render("error");
       } else {
         const newtask1 = {
           id: result[0]._id,
@@ -83,7 +86,7 @@ module.exports.eventDetailsUserF_get = (req, res) => {
           { upsert: true },
           (err, result) => {
             if (err) {
-              console.log(err);
+              res.render("error");
             } else {
               console.log(result);
               var spt = result.events.find((x) => x.title === req.params.title)
@@ -509,8 +512,9 @@ module.exports.eventDetailsUserF_get = (req, res) => {
 
                 // send mail with defined transport object
               }
-              main().catch(console.error);
-
+              if (flag === 0) {
+                main().catch(console.error);
+              }
               console.log(special);
               res.render("eventDetailsUserf", {
                 gmeet: spt,

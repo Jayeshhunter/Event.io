@@ -33,7 +33,7 @@ app.use(
 );
 
 app.use(cookieParser());
-
+const port = process.env.PORT || 5000;
 mongoose
   .connect(
     "mongodb+srv://hackDB:Jayesh@135@cluster0.lev68.mongodb.net/hackDB",
@@ -43,7 +43,7 @@ mongoose
       useCreateIndex: true,
     }
   )
-  .then((result) => app.listen(5000))
+  .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
 const Storage = multer.diskStorage({

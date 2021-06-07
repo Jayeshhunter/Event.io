@@ -22,7 +22,7 @@ module.exports.eventDetailsClub_post = (req, res) => {
     { $push: { events: arObj } },
     (err, result) => {
       if (err) {
-        res.json(err);
+        res.render("error");
       } else {
         res.redirect("/eventDetailsClubF/" + arObj.title);
       }
@@ -50,7 +50,7 @@ module.exports.eventDetailsClubF_get = (req, res) => {
     // console.log(result);
 
     if (err) {
-      console.log(err);
+      res.render("error");
     }
     console.log(result[0]);
     var allInterns = result[0].events.find((x) => x.title === req.params.eveId)

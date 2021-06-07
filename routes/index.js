@@ -17,8 +17,9 @@ router.use(user);
 router.use(club);
 router.use(contact);
 
-// router.get("/faq", (req, res) => res.render("faq"));
+router.get("/faq", (req, res) => res.render("fac"));
 router.get("/aboutus", (req, res) => res.render("aboutus"));
+// router.get("/error", (req, res) => res.render("error"));
 router.get("/getin", (req, res) => res.render("getin"));
 
 module.exports = router;
